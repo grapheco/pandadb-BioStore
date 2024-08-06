@@ -51,8 +51,8 @@ object StoreSequence {
    */
   def convertToBinaryArray(s: String, bioSequenceType: BioSequenceType): Array[Byte] = {
     val conversionMap = bioSequenceType match {
-      case DNA => Map('A' -> "00", 'G' -> "01", 'C' -> "10", 'T' -> "11")
-      case RNA => Map('A' -> "00", 'G' -> "01", 'C' -> "10", 'U' -> "11")
+      case DNA => Map('A' -> "00", 'G' -> "10", 'C' -> "01", 'T' -> "11")
+      case RNA => Map('A' -> "00", 'G' -> "10", 'C' -> "01", 'U' -> "11")
       case _ => throw new BioSequenceTypeException
     }
 
